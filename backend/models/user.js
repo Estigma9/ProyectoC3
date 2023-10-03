@@ -11,10 +11,21 @@ module.exports = (sequelize, type)=>{
             type: type.TEXT,
             allowNull: false, 
         },
-
+        userlastname: {
+            type: type.TEXT,
+            allowNull: false, 
+        },
+        email: {
+            type: type.TEXT,
+            allowNull: false, 
+        },
+        password: {
+            type: type.TEXT,
+            allowNull: false, 
+        },
     },
     {
-
+        timestamps: false,
     }
     );
 };

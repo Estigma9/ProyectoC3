@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const apiRoutes = require('./routes');
+const bodyParser = require('body-parser');
 
 //instancia de express en mi app
 const app = express();
@@ -9,9 +10,11 @@ const app = express();
 
 //middleware morgan para detectar peticiones
 app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
-//primera ruta
+//Manejador de rutas
 app.use('/api', apiRoutes);
 
 

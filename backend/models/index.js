@@ -8,6 +8,7 @@ const sequelize = new Sequelize('railway', 'postgres', 'LQg9eoaqGR8HFlQuA3q9', {
     dialect: 'postgres'
 });
 
+
 const User = UserModel(sequelize, Sequelize);
 
 sequelize.sync({force: false})
