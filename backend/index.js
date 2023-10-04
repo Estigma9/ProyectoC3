@@ -10,6 +10,7 @@ const app = express();
 
 //middleware morgan para detectar peticiones
 app.use(morgan('dev'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

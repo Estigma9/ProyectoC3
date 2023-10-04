@@ -1,6 +1,7 @@
 
 const Sequelize = require('sequelize');
-const UserModel = require('./user.js');
+const UserModel = require('./users.js');
+const FilmModel = require('./films.js');
 
 const sequelize = new Sequelize('railway', 'postgres', 'LQg9eoaqGR8HFlQuA3q9', {
     host: 'containers-us-west-125.railway.app',
@@ -10,8 +11,9 @@ const sequelize = new Sequelize('railway', 'postgres', 'LQg9eoaqGR8HFlQuA3q9', {
 
 
 const User = UserModel(sequelize, Sequelize);
+const Film = FilmModel(sequelize, Sequelize);
 
-sequelize.sync({force: false})
+sequelize.sync({force: true})
     .then(()=>{
         console.log('Tablas sincronizadas');
     });
@@ -19,5 +21,6 @@ sequelize.sync({force: false})
 
 module.exports = {
     User,
+    Film,
 }
 
